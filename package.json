@@ -1,0 +1,11 @@
+{
+  "name": "Templario",
+  "version": "1.0.0b",
+  "description": "Deus Vult",
+  "main": "index.js",
+  "author": "NiDi",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
