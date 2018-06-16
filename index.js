@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const { palavroes } = require('./lista_de_palavroes.json');
+const { respostas } = require('./lista_de_respostas.json');
 
 client.on('ready', () => {
+  client.user.setActivity("Tv Aparecida", {type: 3});
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
@@ -9,8 +12,8 @@ client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.reply('pong');
   }
-  if (msg.content.indexOf("porra") > -1) {
-    msg.reply('Sem palavrão na casa de deus');
+  if (palavroes.some(function(palavrao) { return msg.content.toLowerCase().indexOf(palavrao) > -1; })) {
+    msg.reply(respostas[Math.floor(Math.random() * respostas.length)]);
   }
 });
 
