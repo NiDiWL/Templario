@@ -4,7 +4,8 @@ const { palavroes } = require('./lista_de_palavroes.json');
 const { respostas } = require('./lista_de_respostas.json');
 
 client.on('ready', () => {
-  client.user.setActivity("Tv Aparecida", {type: 3});
+
+  client.user.setActivity("Tv Aparecida", {type: 3}); //type 1 = jogando,   type 2 = ouvindo, type 3 = assistindo
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
